@@ -40,13 +40,13 @@ const HomePage = () => {
             className="group touch-target flex w-full items-center justify-between rounded-xl p-3 text-left transition-all duration-200 select-none active:bg-gray-100 sm:rounded-2xl sm:hover:bg-gray-50"
           >
             <div className="flex items-center space-x-3 sm:space-x-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg sm:h-12 sm:w-12">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0088cc] shadow-lg sm:h-12 sm:w-12">
                 <svg
                   viewBox="0 0 24 24"
-                  className="h-5 w-5 text-white sm:h-7 sm:w-7"
+                  className="h-5 w-5 text-white sm:h-6 sm:w-6"
                   fill="currentColor"
                 >
-                  <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16c-.185 1.894-.893 6.552-.893 6.552-.377 2.61-1.405 3.066-2.309 3.066-.631 0-1.005-.323-1.283-.537L9.857 14.57c-1.008-.616-3.76-2.268-4.206-2.677-.446-.41-.474-.822-.006-1.146.468-.324 4.54-2.707 6.078-3.643l.005-.003c.518-.318 1.027-.632 1.487-.925C14.22 5.78 14.389 5.53 14.389 5.53s.844-.513 1.377-.513c.533 0 .844.513.844.513s.325.25 1.33.756c1.006.507 4.56 2.189 5.028 2.513.468.324.44.736-.006 1.146-.446.41-3.198 2.061-4.206 2.677l-3.226 2.67c-.278.214-.652.537-1.283.537-.904 0-1.932-.456-2.309-3.066 0 0-.708-4.658-.893-6.552-.185-1.894.893-2.707 2.122-2.707s2.307.813 2.122 2.707z" />
+                  <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 2.1 11.75c-1.21-.35-1.22-1.22.26-1.81L21.26 2.2c1.01-.4 1.9.24 1.48 1.86L20.18 17.9c-.18.97-.72 1.21-1.47.75L14.51 16.5 11.9 19c-.39.39-.71.71-1.44.71-.94 0-.78-.35-.78-.78z" />
                 </svg>
               </div>
               <div className="text-left">
