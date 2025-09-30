@@ -2,252 +2,252 @@
   "names": [
     {
       "id": 1,
-      "name": "Maria José",
+      "name": "Maria",
       "gender": "feminino"
     },
     {
       "id": 2,
-      "name": "João Silva",
+      "name": "João",
       "gender": "masculino"
     },
     {
       "id": 3,
-      "name": "Ana Carolina",
+      "name": "Ana",
       "gender": "feminino"
     },
     {
       "id": 4,
-      "name": "Carlos Eduardo",
+      "name": "Carlos",
       "gender": "masculino"
     },
     {
       "id": 5,
-      "name": "Inalda Costa",
+      "name": "Inalda",
       "gender": "feminino"
     },
     {
       "id": 6,
-      "name": "Paulo de Albuquerque",
+      "name": "Paulo",
       "gender": "masculino"
     },
     {
       "id": 7,
-      "name": "Fernanda Oliveira",
+      "name": "Fernanda",
       "gender": "feminino"
     },
     {
       "id": 8,
-      "name": "Roberto Santos",
+      "name": "Roberto",
       "gender": "masculino"
     },
     {
       "id": 9,
-      "name": "Juliana Pereira",
+      "name": "Juliana",
       "gender": "feminino"
     },
     {
       "id": 10,
-      "name": "André Luiz",
+      "name": "André",
       "gender": "masculino"
     },
     {
       "id": 11,
-      "name": "Patrícia Mendes",
+      "name": "Patrícia",
       "gender": "feminino"
     },
     {
       "id": 12,
-      "name": "Gabriel Rodrigues",
+      "name": "Gabriel",
       "gender": "masculino"
     },
     {
       "id": 13,
-      "name": "Cláudia Regina",
+      "name": "Cláudia",
       "gender": "feminino"
     },
     {
       "id": 14,
-      "name": "Marcos Antônio",
+      "name": "Marcos",
       "gender": "masculino"
     },
     {
       "id": 15,
-      "name": "Luciana Fernandes",
+      "name": "Luciana",
       "gender": "feminino"
     },
     {
       "id": 16,
-      "name": "Rafael Moreira",
+      "name": "Rafael",
       "gender": "masculino"
     },
     {
       "id": 17,
-      "name": "Beatriz Almeida",
+      "name": "Beatriz",
       "gender": "feminino"
     },
     {
       "id": 18,
-      "name": "Diego Nascimento",
+      "name": "Diego",
       "gender": "masculino"
     },
     {
       "id": 19,
-      "name": "Camila Barbosa",
+      "name": "Camila",
       "gender": "feminino"
     },
     {
       "id": 20,
-      "name": "Leonardo Souza",
+      "name": "Leonardo",
       "gender": "masculino"
     },
     {
       "id": 21,
-      "name": "Adriana Lima",
+      "name": "Adriana",
       "gender": "feminino"
     },
     {
       "id": 22,
-      "name": "Thiago Gonçalves",
+      "name": "Thiago",
       "gender": "masculino"
     },
     {
       "id": 23,
-      "name": "Vanessa Cardoso",
+      "name": "Vanessa",
       "gender": "feminino"
     },
     {
       "id": 24,
-      "name": "Felipe Martins",
+      "name": "Felipe",
       "gender": "masculino"
     },
     {
       "id": 25,
-      "name": "Renata Ribeiro",
+      "name": "Renata",
       "gender": "feminino"
     },
     {
       "id": 26,
-      "name": "Bruno Costa",
+      "name": "Bruno",
       "gender": "masculino"
     },
     {
       "id": 27,
-      "name": "Priscila Nunes",
+      "name": "Priscila",
       "gender": "feminino"
     },
     {
       "id": 28,
-      "name": "Eduardo Carvalho",
+      "name": "Eduardo",
       "gender": "masculino"
     },
     {
       "id": 29,
-      "name": "Larissa Torres",
+      "name": "Larissa",
       "gender": "feminino"
     },
     {
       "id": 30,
-      "name": "Gustavo Freitas",
+      "name": "Gustavo",
       "gender": "masculino"
     },
     {
       "id": 31,
-      "name": "Michelle Araújo",
+      "name": "Michelle",
       "gender": "feminino"
     },
     {
       "id": 32,
-      "name": "Vinícius Dias",
+      "name": "Vinícius",
       "gender": "masculino"
     },
     {
       "id": 33,
-      "name": "Daniela Castro",
+      "name": "Daniela",
       "gender": "feminino"
     },
     {
       "id": 34,
-      "name": "Rodrigo Ferreira",
+      "name": "Rodrigo",
       "gender": "masculino"
     },
     {
       "id": 35,
-      "name": "Carolina Ramos",
+      "name": "Carolina",
       "gender": "feminino"
     },
     {
       "id": 36,
-      "name": "Mateus Correia",
+      "name": "Mateus",
       "gender": "masculino"
     },
     {
       "id": 37,
-      "name": "Bianca Teixeira",
+      "name": "Bianca",
       "gender": "feminino"
     },
     {
       "id": 38,
-      "name": "Lucas Miranda",
+      "name": "Lucas",
       "gender": "masculino"
     },
     {
       "id": 39,
-      "name": "Tatiana Gomes",
+      "name": "Tatiana",
       "gender": "feminino"
     },
     {
       "id": 40,
-      "name": "Fábio Monteiro",
+      "name": "Fábio",
       "gender": "masculino"
     },
     {
       "id": 41,
-      "name": "Simone Pinto",
+      "name": "Simone",
       "gender": "feminino"
     },
     {
       "id": 42,
-      "name": "Henrique Barros",
+      "name": "Henrique",
       "gender": "masculino"
     },
     {
       "id": 43,
-      "name": "Márcia Xavier",
+      "name": "Márcia",
       "gender": "feminino"
     },
     {
       "id": 44,
-      "name": "Alexandre Vieira",
+      "name": "Alexandre",
       "gender": "masculino"
     },
     {
       "id": 45,
-      "name": "Sabrina Melo",
+      "name": "Sabrina",
       "gender": "feminino"
     },
     {
       "id": 46,
-      "name": "Júlio César",
+      "name": "Júlio",
       "gender": "masculino"
     },
     {
       "id": 47,
-      "name": "Eliane Batista",
+      "name": "Eliane",
       "gender": "feminino"
     },
     {
       "id": 48,
-      "name": "William Lopes",
+      "name": "William",
       "gender": "masculino"
     },
     {
       "id": 49,
-      "name": "Cristiane Macedo",
+      "name": "Cristiane",
       "gender": "feminino"
     },
     {
       "id": 50,
-      "name": "Leandro Campos",
+      "name": "Leandro",
       "gender": "masculino"
     }
   ]

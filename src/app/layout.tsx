@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
@@ -17,8 +17,13 @@ export const metadata: Metadata = {
   title: "Promos da Mih - Black Friday está chegando!",
   description:
     "Prepare-se para receber as melhores promoções do maior evento do ano. Entre no grupo do Telegram com mais de 60.000 membros.",
-  viewport:
-    "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({

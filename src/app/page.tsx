@@ -1,17 +1,22 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import brazilianNames from "../mock/brazilian-names.json";
 
 const HomePage = () => {
   const [availableSpots, setAvailableSpots] = useState<number>(0);
+  const [currentNotification, setCurrentNotification] = useState<{
+    name: string;
+    visible: boolean;
+  }>({ name: "", visible: false });
 
   useEffect(() => {
-    // Gera número inicial aleatório entre 400-500
-    const initialSpots = Math.floor(Math.random() * 101) + 400;
+    // Gera número inicial aleatório entre 70-90
+    const initialSpots = Math.floor(Math.random() * 21) + 70;
     setAvailableSpots(initialSpots);
 
     // Configura o contador decrescente
-    const interval = setInterval(() => {
+    const spotsInterval = setInterval(() => {
       setAvailableSpots((prev) => {
         if (prev <= 1) {
           return 1; // Para em 1 para manter urgência
@@ -22,7 +27,39 @@ const HomePage = () => {
       });
     }, 5000); // 5 segundos entre cada decremento
 
-    return () => clearInterval(interval);
+    return () => clearInterval(spotsInterval);
+  }, []);
+
+  // Controla as notificações de novos membros
+  useEffect(() => {
+    const showNotification = () => {
+      // Seleciona um nome aleatório
+      const randomIndex = Math.floor(
+        Math.random() * brazilianNames.names.length,
+      );
+      const selectedName = brazilianNames.names[randomIndex].name;
+
+      // Mostra a notificação
+      setCurrentNotification({ name: selectedName, visible: true });
+
+      // Esconde após 1.5 segundos
+      setTimeout(() => {
+        setCurrentNotification((prev) => ({ ...prev, visible: false }));
+      }, 1500);
+    };
+
+    // Primeira notificação após 3 segundos
+    const initialTimeout = setTimeout(showNotification, 3000);
+
+    // Notificações subsequentes a cada 8-12 segundos (aleatório)
+    const notificationInterval = setInterval(() => {
+      showNotification();
+    }, 10000); // Intervalo base de 10 segundos
+
+    return () => {
+      clearTimeout(initialTimeout);
+      clearInterval(notificationInterval);
+    };
   }, []);
   return (
     <div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8 sm:px-6">
@@ -77,8 +114,8 @@ const HomePage = () => {
                   <div className="text-sm font-bold text-gray-900 sm:text-base">
                     Entre no grupo do Telegram
                   </div>
-                  <div className="text-xs font-medium text-gray-500">
-                    20.000 Membros
+                  <div className="text-xs font-bold text-[#0088cc] uppercase">
+                    GRUPO VIP Vagas limitadas!
                   </div>
                 </div>
               </div>
@@ -120,8 +157,8 @@ const HomePage = () => {
                   <div className="text-sm font-bold text-gray-900 sm:text-base">
                     Entre no grupo do WhatsApp
                   </div>
-                  <div className="text-xs font-medium text-gray-500">
-                    15.000 Membros
+                  <div className="text-xs font-bold text-[#25D366] uppercase">
+                    GRUPO VIP Vagas limitadas!
                   </div>
                 </div>
               </div>
@@ -186,6 +223,47 @@ const HomePage = () => {
               height={60}
               className="h-auto w-full max-w-[260px] object-contain sm:max-w-[300px]"
             />
+          </div>
+        </div>
+      </div>
+
+      {/* Notificação de Novo Membro */}
+      <div
+        className={`fixed right-4 bottom-4 z-50 transform transition-all duration-700 ease-in-out ${
+          currentNotification.visible
+            ? "translate-x-0 scale-100 opacity-100"
+            : "translate-x-full scale-95 opacity-0"
+        }`}
+      >
+        <div className="flex max-w-sm items-center space-x-3 rounded-lg border-l-4 border-green-500 bg-white px-4 py-3 shadow-xl">
+          <div className="flex-shrink-0">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500">
+              <svg
+                className="h-5 w-5 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="text-sm font-semibold text-green-600">
+              Novo membro!
+            </div>
+            <div className="text-sm text-gray-600">
+              <span className="font-bold text-gray-900">
+                {currentNotification.name}
+              </span>{" "}
+              entrou no grupo
+            </div>
+          </div>
+          <div className="flex-shrink-0">
+            <div className="h-2 w-2 animate-pulse rounded-full bg-green-400"></div>
           </div>
         </div>
       </div>
