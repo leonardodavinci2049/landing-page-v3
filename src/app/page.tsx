@@ -1,7 +1,29 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const HomePage = () => {
+  const [availableSpots, setAvailableSpots] = useState<number>(0);
+
+  useEffect(() => {
+    // Gera número inicial aleatório entre 400-500
+    const initialSpots = Math.floor(Math.random() * 101) + 400;
+    setAvailableSpots(initialSpots);
+
+    // Configura o contador decrescente
+    const interval = setInterval(() => {
+      setAvailableSpots((prev) => {
+        if (prev <= 1) {
+          return 1; // Para em 1 para manter urgência
+        }
+        // Decresce entre 1-3 vagas aleatoriamente a cada intervalo
+        const decrease = Math.floor(Math.random() * 3) + 1;
+        return Math.max(1, prev - decrease); // Garante que nunca fique menor que 1
+      });
+    }, 5000); // 5 segundos entre cada decremento
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8 sm:px-6">
       <div className="xs:max-w-sm w-full max-w-xs space-y-6 text-center sm:max-w-md sm:space-y-8">
@@ -118,6 +140,36 @@ const HomePage = () => {
               </svg>
             </a>
           </div>
+        </div>
+
+        {/* Seção de Escassez */}
+        <div
+          className={`space-y-2 rounded-2xl border p-4 text-center sm:p-5 ${
+            availableSpots <= 50
+              ? "animate-pulse border-red-500 bg-gradient-to-r from-red-100 to-red-50"
+              : "border-red-200 bg-gradient-to-r from-red-50 to-orange-50"
+          }`}
+        >
+          <div className="text-xs font-bold tracking-widest text-red-600 uppercase sm:text-sm">
+            DISPONÍVEL
+          </div>
+          <div
+            className={`font-black ${
+              availableSpots <= 50
+                ? "animate-bounce text-3xl text-red-800 sm:text-4xl"
+                : "text-2xl text-red-700 sm:text-3xl"
+            }`}
+          >
+            {availableSpots} VAGAS
+          </div>
+          <div className="text-sm font-semibold text-gray-700 sm:text-base">
+            Já somos + 70 mil membros.
+          </div>
+          {availableSpots <= 20 && (
+            <div className="animate-pulse text-xs font-bold text-red-800 uppercase">
+              ⚠️ ÚLTIMAS VAGAS!
+            </div>
+          )}
         </div>
 
         {/* Texto e imagem dos merchants */}
