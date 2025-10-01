@@ -11,8 +11,8 @@ const HomePage = () => {
   }>({ name: "", visible: false });
 
   useEffect(() => {
-    // Gera número inicial aleatório entre 70-90
-    const initialSpots = Math.floor(Math.random() * 21) + 70;
+    // Gera número inicial aleatório entre 20-30
+    const initialSpots = Math.floor(Math.random() * 11) + 20;
     setAvailableSpots(initialSpots);
 
     // Configura o contador decrescente
@@ -77,7 +77,7 @@ const HomePage = () => {
 
         {/* Título com efeito de pulsação */}
         <div className="space-y-3 sm:space-y-4">
-          <h1 className="animate-grow-shrink mobile-small-title text-2xl leading-tight font-bold text-gray-900 sm:text-4xl">
+          <h1 className="animate-grow-shrink mobile-small-title text-3xl leading-tight font-bold text-gray-900 sm:text-5xl">
             A Black Friday
             <br />
             está chegando!
@@ -181,10 +181,10 @@ const HomePage = () => {
 
         {/* Seção de Escassez */}
         <div
-          className={`space-y-2 rounded-2xl border p-4 text-center sm:p-5 ${
+          className={`space-y-2 rounded-2xl p-4 text-center sm:p-5 ${
             availableSpots <= 50
-              ? "animate-pulse border-red-500 bg-gradient-to-r from-red-100 to-red-50"
-              : "border-red-200 bg-gradient-to-r from-red-50 to-orange-50"
+              ? "animate-pulse bg-gradient-to-br from-gray-50 to-gray-100"
+              : "bg-gradient-to-br from-gray-50 to-gray-100"
           }`}
         >
           <div className="text-xs font-bold tracking-widest text-red-600 uppercase sm:text-sm">
