@@ -63,7 +63,7 @@ const HomePage = () => {
   }, []);
   return (
     <div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8 sm:px-6">
-      <div className="xs:max-w-sm w-full max-w-xs space-y-6 text-center sm:max-w-md sm:space-y-8">
+      <div className="xs:max-w-sm w-full max-w-xs space-y-4 text-center sm:max-w-md sm:space-y-4">
         {/* Logo */}
         <div className="flex justify-center">
           <Image
@@ -76,7 +76,7 @@ const HomePage = () => {
         </div>
 
         {/* Título com efeito de pulsação */}
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-2 sm:space-y-3">
           <h1 className="animate-grow-shrink mobile-small-title text-3xl leading-tight font-bold text-gray-900 sm:text-5xl">
             A Black Friday
             <br />
@@ -181,7 +181,7 @@ const HomePage = () => {
 
         {/* Seção de Escassez */}
         <div
-          className={`space-y-2 rounded-2xl p-4 text-center sm:p-5 ${
+          className={`space-y-2 rounded-2xl p-3 text-center sm:p-5 ${
             availableSpots <= 50
               ? "animate-pulse bg-gradient-to-br from-gray-50 to-gray-100"
               : "bg-gradient-to-br from-gray-50 to-gray-100"
@@ -200,7 +200,7 @@ const HomePage = () => {
             {availableSpots} {availableSpots === 1 ? "VAGA" : "VAGAS"}
           </div>
           <div className="text-sm font-semibold text-gray-700 sm:text-base">
-            Já somos + 70 mil membros.
+            Já somos + 35 mil membros.
           </div>
           {availableSpots <= 20 && (
             <div className="animate-pulse text-xs font-bold text-red-800 uppercase">
@@ -210,7 +210,7 @@ const HomePage = () => {
         </div>
 
         {/* Texto e imagem dos merchants */}
-        <div className="space-y-4 sm:space-y-6">
+        <div className="space-y-2 sm:space-y-2">
           <p className="text-base font-semibold text-gray-700 sm:text-lg">
             Conexões diretas com:
           </p>
