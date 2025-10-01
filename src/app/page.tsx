@@ -197,7 +197,7 @@ const HomePage = () => {
                 : "text-2xl text-red-700 sm:text-3xl"
             }`}
           >
-            {availableSpots} VAGAS
+            {availableSpots} {availableSpots === 1 ? "VAGA" : "VAGAS"}
           </div>
           <div className="text-sm font-semibold text-gray-700 sm:text-base">
             Já somos + 70 mil membros.
