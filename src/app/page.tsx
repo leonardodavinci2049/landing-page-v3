@@ -62,12 +62,12 @@ const HomePage = () => {
     };
   }, []);
   return (
-    <div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8 sm:px-6">
+    <div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-pink-400 via-purple-300 to-rose-200 px-4 py-8 sm:px-6">
       <div className="xs:max-w-sm w-full max-w-xs space-y-4 text-center sm:max-w-md sm:space-y-4">
         {/* Logo */}
         <div className="flex justify-center">
           <Image
-            src="/logo-promosdamih.png"
+            src="/logo-promosdamih.jpeg"
             alt="Promos da Mih"
             width={100}
             height={100}
@@ -182,9 +182,7 @@ const HomePage = () => {
         {/* Seção de Escassez */}
         <div
           className={`space-y-2 rounded-2xl p-3 text-center sm:p-5 ${
-            availableSpots <= 50
-              ? "animate-pulse bg-gradient-to-br from-gray-50 to-gray-100"
-              : "bg-gradient-to-br from-gray-50 to-gray-100"
+            availableSpots <= 50 ? "animate-pulse" : ""
           }`}
         >
           <div className="text-xs font-bold tracking-widest text-red-600 uppercase sm:text-sm">
@@ -235,9 +233,9 @@ const HomePage = () => {
             : "translate-x-full scale-95 opacity-0"
         }`}
       >
-        <div className="flex max-w-sm items-center space-x-3 rounded-lg border-l-4 border-green-500 bg-white px-4 py-3 shadow-xl">
+        <div className="flex max-w-sm items-center space-x-3 rounded-lg border-l-4 border-pink-500 bg-white px-4 py-3 shadow-xl">
           <div className="flex-shrink-0">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 to-purple-500">
               <svg
                 className="h-5 w-5 text-white"
                 fill="currentColor"
@@ -252,7 +250,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="min-w-0 flex-1">
-            <div className="text-sm font-semibold text-green-600">
+            <div className="text-sm font-semibold text-pink-600">
               Novo membro!
             </div>
             <div className="text-sm text-gray-600">
@@ -263,7 +261,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="flex-shrink-0">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-green-400"></div>
+            <div className="h-2 w-2 animate-pulse rounded-full bg-pink-400"></div>
           </div>
         </div>
       </div>
