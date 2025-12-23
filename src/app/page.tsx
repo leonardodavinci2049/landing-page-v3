@@ -100,7 +100,7 @@ const HomePage = () => {
 					{/* Botão do WhatsApp */}
 					<div className="rounded-2xl border border-gray-200 bg-white p-3 shadow-xl transition-shadow duration-300 active:shadow-lg sm:rounded-3xl sm:p-4 sm:hover:shadow-2xl">
 						<a
-							href="https://chat.whatsapp.com/JEnE7YSlzJ7IYUegEjdM8J"
+							href="https://chat.whatsapp.com/FNgs4ztm8dQ5FMaCqlA4aU"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="group touch-target flex w-full items-center justify-between rounded-xl p-2 text-left transition-all duration-200 select-none active:bg-gray-100 sm:rounded-2xl sm:hover:bg-gray-50"
