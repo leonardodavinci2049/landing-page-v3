@@ -83,16 +83,13 @@ const HomePage = () => {
 				</div>
 				{/* Título com efeito de pulsação */}
 				<div className="space-y-2 sm:space-y-3">
-					<h1 className="animate-grow-shrink mobile-small-title text-3xl leading-tight font-bold text-gray-900 sm:text-5xl">
-						A Black Friday
-						<br />
-						está chegando!
+					<h1 className="animate-grow-shrink mobile-small-title text-3xl leading-tight font-bold text-gray-900 sm:text-3xl">
+						👀 ENQUANTO <br />VOCÊ LÊ ISSO
 					</h1>
 
 					<p className="mobile-small xs:px-2 xs:text-base px-1 text-sm leading-relaxed text-gray-600 sm:px-0 sm:text-lg">
-						Prepare-se para receber as melhores
-						<br />
-						promoções do maior evento do ano.
+						tem gente pagando metade do preço <br />
+						Quer saber como? Entra no grupo.
 					</p>
 				</div>
 				{/* Botões de contato */}
