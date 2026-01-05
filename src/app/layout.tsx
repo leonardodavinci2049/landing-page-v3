@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "Promos da Mih - Black Friday está chegando!",
+	title: "Promos da Mih - Cupons e Promoções",
 	description:
-		"Prepare-se para receber as melhores promoções do maior evento do ano. Entre no grupo do Telegram com mais de 60.000 membros.",
+		"Prepare-se para receber cupons e as melhores promoções. Entre nos nossos grupos. Já somos mais de 60.000 membros.",
 };
 
 export const viewport: Viewport = {
