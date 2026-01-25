@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 import brazilianNames from "../mock/brazilian-names.json";
 
-
 const HomePage = () => {
 	const [availableSpots, setAvailableSpots] = useState<number>(0);
 	const [currentNotification, setCurrentNotification] = useState<{
@@ -85,7 +84,8 @@ const HomePage = () => {
 				{/* Título com efeito de pulsação */}
 				<div className="space-y-2 sm:space-y-3">
 					<h1 className="animate-grow-shrink mobile-small-title text-3xl leading-tight font-bold text-gray-900 sm:text-3xl">
-						👀 ENQUANTO <br />VOCÊ LÊ ISSO
+						👀 ENQUANTO <br />
+						VOCÊ LÊ ISSO
 					</h1>
 
 					<p className="mobile-small xs:px-2 xs:text-base px-1 text-sm leading-relaxed text-gray-600 sm:px-0 sm:text-lg">
