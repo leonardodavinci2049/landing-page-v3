@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { env } from "@/lib/env";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				{/* Google Tag Manager */}
+				{/* eslint-disable-next-line @eslint-react/dom/no-static-html-element-attributes */}
 				<Script
 					id="gtm-script"
 					strategy="afterInteractive"
@@ -46,13 +48,13 @@ export default function RootLayout({
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-K32FH9SX');`,
+            })(window,document,'script','dataLayer','${env.GTM_ID}');`,
 					}}
 				/>
 				{/* Google Tag Manager (noscript) */}
 				<noscript>
 					<iframe
-						src="https://www.googletagmanager.com/ns.html?id=GTM-K32FH9SX"
+						src={`https://www.googletagmanager.com/ns.html?id=${env.GTM_ID}`}
 						height="0"
 						width="0"
 						title="Google Tag Manager"
