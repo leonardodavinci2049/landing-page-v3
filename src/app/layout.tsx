@@ -39,7 +39,6 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				{/* Google Tag Manager */}
-				{/* eslint-disable-next-line @eslint-react/dom/no-static-html-element-attributes */}
 				<Script
 					id="gtm-script"
 					strategy="afterInteractive"

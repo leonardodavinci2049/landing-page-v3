@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
-import brazilianNames from "../mock/brazilian-names.json";
 import { env } from "@/lib/env";
+import brazilianNames from "../mock/brazilian-names.json";
 
 const HomePage = () => {
 	const [availableSpots, setAvailableSpots] = useState<number>(0);
