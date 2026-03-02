@@ -9,7 +9,9 @@ const envSchema = z.object({
 		.string()
 		.min(1, "WHATSAPP_URL deve ser definido")
 		.url("WHATSAPP_URL deve ser uma URL válida")
-		.includes("whatsapp.com", { message: "WHATSAPP_URL deve ser um link do WhatsApp" }),
+		.includes("whatsapp.com", {
+			message: "WHATSAPP_URL deve ser um link do WhatsApp",
+		}),
 });
 
 type Env = z.infer<typeof envSchema>;
