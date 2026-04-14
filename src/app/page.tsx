@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { env } from "@/lib/env";
 import brazilianNames from "../mock/brazilian-names.json";
 
+const notificationSequence = [2, 1, 3]; // WhatsApp counts before Telegram
+
 const HomePage = () => {
 	const [availableSpots, setAvailableSpots] = useState<number>(0);
 	const [currentNotification, setCurrentNotification] = useState<{
@@ -11,7 +13,6 @@ const HomePage = () => {
 		visible: boolean;
 		type: "whatsapp" | "telegram";
 	}>({ name: "", visible: false, type: "whatsapp" });
-	const notificationSequence = [2, 1, 3]; // WhatsApp counts before Telegram
 	const [sequenceIndex, setSequenceIndex] = useState(0);
 	const [whatsCount, setWhatsCount] = useState(0);
 	useEffect(() => {

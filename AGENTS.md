@@ -14,8 +14,10 @@ pnpm dev              # Start dev server with Turbopack (http://localhost:3000)
 pnpm build            # Production build with Turbopack
 pnpm start            # Run production server on port 5560
 
-# Linting
-pnpm lint             # Run ESLint on the codebase
+# Linting & Formatting (Biome)
+pnpm lint             # Lint and format with Biome (auto-fix)
+pnpm lint:check       # Check lint/format without writing
+pnpm format           # Format files with Biome
 
 # Type checking (no separate script - integrated in build)
 npx tsc --noEmit      # Manual type check without emitting files
@@ -73,11 +75,11 @@ public/               # Static assets (images, logos)
 - Use CSS variables for colors (defined in globals.css with oklch values)
 - Animations: Use `tw-animate-css` classes or custom keyframes in globals.css
 
-### Formatting (Prettier)
+### Formatting (Biome)
 
-- Tailwind class sorting via `prettier-plugin-tailwindcss`
-- Tab indentation (configured in project)
-- Run formatting before commits
+- Biome handles both linting and formatting (`biome.json`)
+- Tab indentation, double quotes, semicolons always
+- Run `pnpm lint` (auto-fix) or `pnpm format` before commits
 
 ### Error Handling
 
@@ -130,13 +132,14 @@ Configuration in `components.json` - uses "new-york" style, stone base color.
 - Notifications: appear every 10 seconds, visible for 1.5 seconds
 - Use `transition-all duration-700` for smooth transitions
 
-## ESLint Configuration
+## Biome Configuration
 
-ESLint uses flat config format (`eslint.config.mjs`):
+Biome config in `biome.json`:
 
-- Extends `eslint-config-next`
-- Special exceptions for `layout.tsx`: allows dangerouslySetInnerHTML for GTM
+- Recommended rules enabled for linting
+- Special exception for `layout.tsx`: allows dangerouslySetInnerHTML for GTM
 - Ignores: `node_modules/`, `.next/`, `out/`, `build/`
+- Handles both linting and formatting (replaces ESLint + Prettier)
 
 ## External Dependencies
 
@@ -157,7 +160,7 @@ ESLint uses flat config format (`eslint.config.mjs`):
 3. **Responsive values**: Use Tailwind prefixes, don't hardcode pixel values
 4. **GTM removal**: Never remove Google Tag Manager code without explicit approval
 5. **Animation timing**: Don't modify without testing user experience impact
-6. **Class order**: Let Prettier sort Tailwind classes automatically
+6. **Class order**: Use Biome formatting to maintain consistent code style
 
 ## Git Workflow
 
@@ -177,7 +180,9 @@ git flow release finish version        # Merge to main + develop, tag
 | Start dev server     | `pnpm dev`                     |
 | Build for production | `pnpm build`                   |
 | Run production       | `pnpm start`                   |
-| Lint code            | `pnpm lint`                    |
+| Lint & fix           | `pnpm lint`                    |
+| Lint check only      | `pnpm lint:check`              |
+| Format code          | `pnpm format`                  |
 | Type check           | `npx tsc --noEmit`             |
 | Add UI component     | `npx shadcn@latest add <name>` |
 | Check dependencies   | `pnpm outdated`                |
