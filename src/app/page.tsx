@@ -2,17 +2,31 @@ import Image from "next/image";
 import { AvailableSpotsCounter } from "@/app/_components/available-spots-counter";
 import { GroupLinkCard } from "@/app/_components/group-link-card";
 import { NewMemberNotification } from "@/app/_components/new-member-notification";
-import { env } from "@/lib/env";
+import { getLatestPromoLinksByType } from "@/services/db/promo-link";
 import brazilianNames from "../mock/brazilian-names.json";
 
 const memberNames = brazilianNames.names.map(({ name }) => name);
 
-const groupLinks = {
-	whatsapp: env.WHATSAPP_URL,
-	telegram: "https://t.me/promosdamih",
-};
+function getRequiredLink(link: string | null | undefined, label: string) {
+	if (link?.trim()) {
+		return link;
+	}
 
-export default function HomePage() {
+	throw new Error(`Promo link ${label} não encontrado no banco de dados`);
+}
+
+async function getHomeGroupLinks() {
+	const latestPromoLinks = await getLatestPromoLinksByType();
+
+	return {
+		whatsapp: getRequiredLink(latestPromoLinks?.type1.link1, "WhatsApp"),
+		telegram: getRequiredLink(latestPromoLinks?.type2.link1, "Telegram"),
+	};
+}
+
+export default async function HomePage() {
+	const groupLinks = await getHomeGroupLinks();
+
 	return (
 		<div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-linear-to-br from-pink-400 via-purple-300 to-rose-200 px-4 py-8 sm:px-6">
 			<div className="xs:max-w-sm w-full max-w-xs space-y-4 text-center sm:max-w-md sm:space-y-4">
@@ -56,6 +70,7 @@ export default function HomePage() {
 							alt="Merchants parceiros"
 							width={300}
 							height={69}
+							loading="eager"
 							className="h-auto w-auto max-w-full object-contain"
 						/>
 					</div>
