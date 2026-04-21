@@ -12,7 +12,7 @@ export function PromoLinkFindLatestTypeQuery(
         ${PE_APP_ID}
         ) `;
 
-				console.log('queryString : ', queryString);
+	//	console.log('queryString : ', queryString);
 
 	return queryString;
 }
