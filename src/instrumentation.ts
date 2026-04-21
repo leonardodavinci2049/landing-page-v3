@@ -1,5 +1,5 @@
-import dbService from "@/database/dbConnection";
 import { createLogger } from "@/core/logger";
+import dbService from "@/database/dbConnection";
 
 const logger = createLogger("app-bootstrap");
 
