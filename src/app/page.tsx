@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { AvailableSpotsCounter } from "@/app/_components/available-spots-counter";
 import { GroupLinkCard } from "@/app/_components/group-link-card";
-import { NewMemberNotification } from "@/app/_components/new-member-notification";
 import { getHomeGroupLinks } from "@/services/db/promo-link";
 import brazilianNames from "../mock/brazilian-names.json";
+import { NewMemberNotification } from "./_components/new-member-notification";
 
 const memberNames = brazilianNames.names.map(({ name }) => name);
 
