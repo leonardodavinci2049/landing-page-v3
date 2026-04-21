@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { connection } from "next/server";
 import { AvailableSpotsCounter } from "@/app/_components/available-spots-counter";
 import { GroupLinkCard } from "@/app/_components/group-link-card";
 import { getHomeGroupLinks } from "@/services/db/promo-link";
@@ -16,6 +17,8 @@ function requireLink(link: string | null | undefined, label: string): string {
 }
 
 export default async function HomePage() {
+	await connection();
+
 	const groupLinks = await getHomeGroupLinks();
 
 	const whatsappLink = requireLink(groupLinks?.whatsapp, "WhatsApp");
