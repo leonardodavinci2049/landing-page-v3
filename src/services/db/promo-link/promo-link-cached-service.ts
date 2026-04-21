@@ -196,3 +196,27 @@ export async function getLatestPromoLinksByType(
 		return null;
 	}
 }
+
+// Explicit mapping: type1 = WhatsApp group, type2 = Telegram group
+const PROMO_LINK_PLATFORM_KEYS = {
+	whatsapp: "type1",
+	telegram: "type2",
+} as const satisfies Record<string, keyof PromoLinkLatestTypeItem>;
+
+export type HomeGroupLinks = {
+	whatsapp: string | null;
+	telegram: string | null;
+};
+
+export async function getHomeGroupLinks(
+	appId?: number,
+): Promise<HomeGroupLinks | null> {
+	const links = await getLatestPromoLinksByType(appId);
+
+	if (!links) return null;
+
+	return {
+		whatsapp: links[PROMO_LINK_PLATFORM_KEYS.whatsapp].link1,
+		telegram: links[PROMO_LINK_PLATFORM_KEYS.telegram].link1,
+	};
+}
