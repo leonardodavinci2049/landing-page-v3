@@ -28,6 +28,7 @@ const serverEnvsSchema = z.object({
 	DATABASE_USER: z.string().min(1),
 	DATABASE_PASSWORD: z.string().min(1),
 	API_KEY: z.string().min(1),
+	REVALIDATE_SECRET: z.string().min(32),
 	BETTER_AUTH_URL: z.string().url(),
 	BETTER_AUTH_SECRET: z.string().min(1),
 	RESEND_API_KEY: z.string().min(1),
