@@ -82,6 +82,9 @@ export function NewMemberNotification({ names }: NewMemberNotificationProps) {
 
 	return (
 		<div
+			role="status"
+			aria-live="polite"
+			aria-atomic="true"
 			className={`fixed right-4 bottom-4 z-50 transform transition-all duration-700 ease-in-out ${
 				currentNotification.visible
 					? "translate-x-0 scale-100 opacity-100"

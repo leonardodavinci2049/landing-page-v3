@@ -32,7 +32,7 @@ export function AvailableSpotsCounter() {
 	return (
 		<div
 			className={`space-y-2 rounded-2xl p-3 text-center sm:p-5 ${
-				availableSpots <= 50 ? "animate-pulse" : ""
+				availableSpots <= 10 ? "animate-pulse" : ""
 			}`}
 		>
 			<div className="text-xs font-bold tracking-widest text-red-600 uppercase sm:text-sm">
@@ -40,7 +40,7 @@ export function AvailableSpotsCounter() {
 			</div>
 			<div
 				className={`font-black ${
-					availableSpots <= 50
+					availableSpots <= 10
 						? "animate-bounce text-3xl text-red-800 sm:text-4xl"
 						: "text-2xl text-red-700 sm:text-3xl"
 				}`}

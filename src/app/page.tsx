@@ -2,12 +2,12 @@ import Image from "next/image";
 import { AvailableSpotsCounter } from "@/app/_components/available-spots-counter";
 import { GroupLinkCard } from "@/app/_components/group-link-card";
 import { NewMemberNotification } from "@/app/_components/new-member-notification";
-import { getLatestPromoLinksByType } from "@/services/db/promo-link";
+import { getHomeGroupLinks } from "@/services/db/promo-link";
 import brazilianNames from "../mock/brazilian-names.json";
 
 const memberNames = brazilianNames.names.map(({ name }) => name);
 
-function getRequiredLink(link: string | null | undefined, label: string) {
+function requireLink(link: string | null | undefined, label: string): string {
 	if (link?.trim()) {
 		return link;
 	}
@@ -15,17 +15,11 @@ function getRequiredLink(link: string | null | undefined, label: string) {
 	throw new Error(`Promo link ${label} não encontrado no banco de dados`);
 }
 
-async function getHomeGroupLinks() {
-	const latestPromoLinks = await getLatestPromoLinksByType();
-
-	return {
-		whatsapp: getRequiredLink(latestPromoLinks?.type1.link1, "WhatsApp"),
-		telegram: getRequiredLink(latestPromoLinks?.type2.link1, "Telegram"),
-	};
-}
-
 export default async function HomePage() {
 	const groupLinks = await getHomeGroupLinks();
+
+	const whatsappLink = requireLink(groupLinks?.whatsapp, "WhatsApp");
+	const telegramLink = requireLink(groupLinks?.telegram, "Telegram");
 
 	return (
 		<div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-linear-to-br from-pink-400 via-purple-300 to-rose-200 px-4 py-8 sm:px-6">
@@ -53,8 +47,8 @@ export default async function HomePage() {
 				</div>
 
 				<div className="space-y-3">
-					<GroupLinkCard platform="whatsapp" href={groupLinks.whatsapp} />
-					<GroupLinkCard platform="telegram" href={groupLinks.telegram} />
+					<GroupLinkCard platform="whatsapp" href={whatsappLink} />
+					<GroupLinkCard platform="telegram" href={telegramLink} />
 				</div>
 
 				<AvailableSpotsCounter />
